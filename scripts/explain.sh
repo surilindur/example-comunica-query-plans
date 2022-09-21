@@ -11,7 +11,7 @@ declare -A templates=(
   ["physical"]="--explain physical"
 )
 
-comunica="node node_modules/.bin/comunica-sparql"
+comunica="node_modules/.bin/comunica-sparql"
 
 for query in "${!queries[@]}"
 do

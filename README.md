@@ -13,6 +13,12 @@ There is the `scripts/explain.sh` bash script that just runs `comunica-sparql`:
 * With `--explain logical`, to produce the logical query plan as `*-logical.json`
 * With `--explain physical`, to produce the physical query plan as `*-physical.json`
 
+For example, to generate the logical query plan for the query related to films, using DBPedia 2016 as the source, one could run:
+
+```
+comunica-sparql https://fragments.dbpedia.org/2016-04/en --file queries/films.rq --explain logical
+```
+
 To install the dependencies as they are in the Yarn lockfile and to run the bash script to generate the output:
 
 ```
