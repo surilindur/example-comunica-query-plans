@@ -1,0 +1,3290 @@
+{
+  "logical": "project",
+  "variables": [
+    "movie",
+    "title",
+    "name"
+  ],
+  "children": [
+    {
+      "logical": "filter",
+      "children": [
+        {
+          "logical": "join",
+          "children": [
+            {
+              "logical": "pattern",
+              "pattern": "?movie http://dbpedia.org/ontology/starring ?g_0"
+            },
+            {
+              "logical": "pattern",
+              "pattern": "?movie http://www.w3.org/2000/01/rdf-schema#label ?title"
+            },
+            {
+              "logical": "pattern",
+              "pattern": "?movie http://dbpedia.org/ontology/director ?g_1"
+            },
+            {
+              "logical": "pattern",
+              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+            },
+            {
+              "logical": "pattern",
+              "pattern": "?g_0 http://www.w3.org/2000/01/rdf-schema#label \"Brad Pitt\"@en"
+            },
+            {
+              "logical": "join-inner",
+              "physical": "bind",
+              "bindIndex": 4,
+              "bindOrder": "depth-first",
+              "cardinalities": [
+                {
+                  "type": "estimate",
+                  "value": 401556
+                },
+                {
+                  "type": "estimate",
+                  "value": 20013903
+                },
+                {
+                  "type": "estimate",
+                  "value": 118505
+                },
+                {
+                  "type": "estimate",
+                  "value": 20013903
+                },
+                {
+                  "type": "estimate",
+                  "value": 2
+                }
+              ],
+              "joinCoefficients": {
+                "iterations": 3500.4249027401393,
+                "persistedItems": 0,
+                "blockingItems": 0,
+                "requestTime": 2.779754750066373
+              },
+              "children": [
+                {
+                  "logical": "join",
+                  "children": [
+                    {
+                      "logical": "pattern",
+                      "pattern": "?movie http://dbpedia.org/ontology/director ?g_1"
+                    },
+                    {
+                      "logical": "pattern",
+                      "pattern": "?movie http://dbpedia.org/ontology/starring http://dbpedia.org/resource/Brad_Pitt"
+                    },
+                    {
+                      "logical": "pattern",
+                      "pattern": "?movie http://www.w3.org/2000/01/rdf-schema#label ?title"
+                    },
+                    {
+                      "logical": "pattern",
+                      "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                    },
+                    {
+                      "logical": "join-inner",
+                      "physical": "bind",
+                      "bindIndex": 1,
+                      "bindOrder": "depth-first",
+                      "cardinalities": [
+                        {
+                          "type": "estimate",
+                          "value": 118505
+                        },
+                        {
+                          "type": "estimate",
+                          "value": 40
+                        },
+                        {
+                          "type": "estimate",
+                          "value": 20013903
+                        },
+                        {
+                          "type": "estimate",
+                          "value": 20013903
+                        }
+                      ],
+                      "joinCoefficients": {
+                        "iterations": 63462.763444745564,
+                        "persistedItems": 0,
+                        "blockingItems": 0,
+                        "requestTime": 25.913677795495186
+                      },
+                      "children": [
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/12_Monkeys http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/12_Monkeys http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.3829533254516475
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Terry_Gilliam http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/12_Monkeys http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 0.9099999999999999
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/A_River_Runs_Through_It_(film) http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/A_River_Runs_Through_It_(film) http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.5430459272917427
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Robert_Redford http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/A_River_Runs_Through_It_(film) http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 0.8300000000000001
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Across_the_Tracks http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Across_the_Tracks http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.36244401533112397
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Sandy_Tung http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Across_the_Tracks http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 0.6799999999999999
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Babel_(film) http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Babel_(film) http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.47295332545164753
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Alejandro_González_Iñárritu http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Babel_(film) http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 0.95
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Burn_After_Reading http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Burn_After_Reading http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.8948516631735988
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Coen_brothers http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Burn_After_Reading http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 1.22
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Contact_(1992_film) http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Contact_(1992_film) http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "multi-empty",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 0
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 0,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Cool_World http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Cool_World http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.41290702453159994
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Ralph_Bakshi http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Cool_World http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 0.7
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Cutting_Class http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Cutting_Class http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.6236015383323138
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Rospo_Pallenberg http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Cutting_Class http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 0.8999999999999999
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Happy_Feet_Two http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Happy_Feet_Two http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.4129996263716951
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/George_Miller_(director) http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Happy_Feet_Two http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 0.7
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Interview_with_the_Vampire_(film) http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Interview_with_the_Vampire_(film) http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.614481255813218
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Neil_Jordan http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Interview_with_the_Vampire_(film) http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 1.1
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Johnny_Suede http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Johnny_Suede http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.3628607236115523
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Tom_DiCillo http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Johnny_Suede http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 2.04
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Kalifornia http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Kalifornia http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.5133700337320758
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Dominic_Sena http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Kalifornia http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 1.13
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Legends_of_the_Fall http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Legends_of_the_Fall http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.4731848300518855
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Edward_Zwick http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Legends_of_the_Fall http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 0.76
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Meet_Joe_Black http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Meet_Joe_Black http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.3531848300518855
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Martin_Brest http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Meet_Joe_Black http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 1.04
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Megamind http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Megamind http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.5235089364922186
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Tom_McGrath_(animator) http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Megamind http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 1.09
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Moneyball_(film) http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Moneyball_(film) http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.473462635572171
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Bennett_Miller http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Moneyball_(film) http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 1.01
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Mr._&_Mrs._Smith_(2005_film) http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Mr._&_Mrs._Smith_(2005_film) http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.5437867420125042
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Doug_Liman http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Mr._&_Mrs._Smith_(2005_film) http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 1.33
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Oceans_Eleven http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Oceans_Eleven http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 2
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58444024390246,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.4432311312439272
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Steven_Soderbergh http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Oceans_Eleven http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 2
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 2,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 1.29
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Oceans_Thirteen http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Oceans_Thirteen http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 2
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58444024390246,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.3225829183499356
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Steven_Soderbergh http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Oceans_Thirteen http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 2
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 2,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 1.01
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Oceans_Trilogy http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Oceans_Trilogy http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.35230511257098124
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Steven_Soderbergh http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Oceans_Trilogy http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 0.59
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Oceans_Twelve http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Oceans_Twelve http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 2
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58444024390246,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.39216621006094093
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Steven_Soderbergh http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Oceans_Twelve http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 2
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 2,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 0.8300000000000001
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Seven_(1995_film) http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Seven_(1995_film) http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.5934163346521234
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/David_Fincher http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Seven_(1995_film) http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 0.8200000000000001
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Seven_Years_in_Tibet_(1997_film) http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Seven_Years_in_Tibet_(1997_film) http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.5432311309719331
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Jean-Jacques_Annaud http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Seven_Years_in_Tibet_(1997_film) http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 0.86
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Sinbad:_Legend_of_the_Seven_Seas http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Sinbad:_Legend_of_the_Seven_Seas http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.3037404410924565
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Tim_Johnson_(film_director) http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Sinbad:_Legend_of_the_Seven_Seas http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 1.2
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Sleepers_(film) http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Sleepers_(film) http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.4929533254516475
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Barry_Levinson http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Sleepers_(film) http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 0.7
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Spy_Game http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Spy_Game http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.3932774318919806
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Tony_Scott http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Spy_Game http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 0.95
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/The_Assassination_of_Jesse_James_by_the_Coward_Robert_Ford http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/The_Assassination_of_Jesse_James_by_the_Coward_Robert_Ford http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.34286072361155234
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Andrew_Dominik http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/The_Assassination_of_Jesse_James_by_the_Coward_Robert_Ford http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 0.8899999999999999
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/The_Audition_(2015_film) http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/The_Audition_(2015_film) http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.37313852913183787
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Martin_Scorsese http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/The_Audition_(2015_film) http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 1.08
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/The_Curious_Case_of_Benjamin_Button_(film) http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/The_Curious_Case_of_Benjamin_Button_(film) http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.47323113097193303
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/David_Fincher http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/The_Curious_Case_of_Benjamin_Button_(film) http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 0.78
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/The_Dark_Side_of_the_Sun_(film) http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/The_Dark_Side_of_the_Sun_(film) http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "multi-empty",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 0
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 0,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/The_Devils_Own http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/The_Devils_Own http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.6038330429325517
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Alan_J._Pakula http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/The_Devils_Own http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 1.06
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/The_Favor http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/The_Favor http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.3833710324623554
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Donald_Petrie http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/The_Favor http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 3.12
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/The_Mexican http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/The_Mexican http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.27267551993136196
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Gore_Verbinski http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/The_Mexican http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 0.95
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/The_Tiger_(upcoming_film) http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/The_Tiger_(upcoming_film) http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.6435089364922186
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Michaël_R._Roskam http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/The_Tiger_(upcoming_film) http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 1.07
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Thelma_&_Louise http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Thelma_&_Louise http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.35299962637169513
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Ridley_Scott http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Thelma_&_Louise http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 0.97
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Too_Young_to_Die%3F http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Too_Young_to_Die%3F http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.47276812177145716
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Robert_Markowitz http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Too_Young_to_Die%3F http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 0.9400000000000001
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Troy_(film) http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Troy_(film) http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.463231130971933
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Wolfgang_Petersen http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Troy_(film) http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 1.19
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/True_Romance http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/True_Romance http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.3526292190113144
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Tony_Scott http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/True_Romance http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 0.81
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Two-Fisted_Tales_(film) http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/Two-Fisted_Tales_(film) http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 3
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 1423.7532914634146,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 1.028582170834657
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Richard_Donner http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Two-Fisted_Tales_(film) http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 0.7
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Robert_Zemeckis http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Two-Fisted_Tales_(film) http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 0.75
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Tom_Holland_(director) http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/Two-Fisted_Tales_(film) http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 0.97
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "logical": "join",
+                          "children": [
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/War_Machine_(film) http://dbpedia.org/ontology/director ?g_1"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "http://dbpedia.org/resource/War_Machine_(film) http://www.w3.org/2000/01/rdf-schema#label ?title"
+                            },
+                            {
+                              "logical": "pattern",
+                              "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                            },
+                            {
+                              "logical": "join-inner",
+                              "physical": "bind",
+                              "bindIndex": 0,
+                              "bindOrder": "depth-first",
+                              "cardinalities": [
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 1
+                                },
+                                {
+                                  "type": "estimate",
+                                  "value": 20013903
+                                }
+                              ],
+                              "joinCoefficients": {
+                                "iterations": 474.58443048780487,
+                                "persistedItems": 0,
+                                "blockingItems": 0,
+                                "requestTime": 0.5133700337320758
+                              },
+                              "children": [
+                                {
+                                  "logical": "join",
+                                  "children": [
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/David_Michôd http://www.w3.org/2000/01/rdf-schema#label ?name"
+                                    },
+                                    {
+                                      "logical": "pattern",
+                                      "pattern": "http://dbpedia.org/resource/War_Machine_(film) http://www.w3.org/2000/01/rdf-schema#label ?title"
+                                    },
+                                    {
+                                      "logical": "join-inner",
+                                      "physical": "nested-loop",
+                                      "cardinalities": [
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        },
+                                        {
+                                          "type": "estimate",
+                                          "value": 1
+                                        }
+                                      ],
+                                      "joinCoefficients": {
+                                        "iterations": 1,
+                                        "persistedItems": 0,
+                                        "blockingItems": 0,
+                                        "requestTime": 0.78
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "logical": "join",
+                  "children": [
+                    {
+                      "logical": "pattern",
+                      "pattern": "?movie http://dbpedia.org/ontology/director ?g_1"
+                    },
+                    {
+                      "logical": "pattern",
+                      "pattern": "?movie http://dbpedia.org/ontology/starring http://wikidata.dbpedia.org/resource/Q35332"
+                    },
+                    {
+                      "logical": "pattern",
+                      "pattern": "?movie http://www.w3.org/2000/01/rdf-schema#label ?title"
+                    },
+                    {
+                      "logical": "pattern",
+                      "pattern": "?g_1 http://www.w3.org/2000/01/rdf-schema#label ?name"
+                    },
+                    {
+                      "logical": "join-inner",
+                      "physical": "multi-empty",
+                      "cardinalities": [
+                        {
+                          "type": "estimate",
+                          "value": 118505
+                        },
+                        {
+                          "type": "estimate",
+                          "value": 0
+                        },
+                        {
+                          "type": "estimate",
+                          "value": 20013903
+                        },
+                        {
+                          "type": "estimate",
+                          "value": 20013903
+                        }
+                      ],
+                      "joinCoefficients": {
+                        "iterations": 0,
+                        "persistedItems": 0,
+                        "blockingItems": 0,
+                        "requestTime": 0
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "random-query-stuff",
+  "version": "0.0.1",
+  "description": "Random query-related things for sharing purposes, nothing useful",
+  "main": "index.js",
+  "scripts": {
+    "explain": "bash scripts/explain.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/surilindur/random-query-stuff.git"
+  },
+  "author": "surilindur",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/surilindur/random-query-stuff/issues"
+  },
+  "homepage": "https://github.com/surilindur/random-query-stuff#readme",
+  "dependencies": {
+    "@comunica/query-sparql": "^2.4.3"
+  }
+}

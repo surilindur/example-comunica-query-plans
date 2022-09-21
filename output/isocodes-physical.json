@@ -1,0 +1,787 @@
+{
+  "logical": "distinct",
+  "children": [
+    {
+      "logical": "project",
+      "variables": [
+        "isoCode",
+        "year",
+        "life_exp"
+      ],
+      "children": [
+        {
+          "logical": "orderby",
+          "children": [
+            {
+              "logical": "join",
+              "children": [
+                {
+                  "logical": "service"
+                },
+                {
+                  "logical": "service"
+                },
+                {
+                  "logical": "join-inner",
+                  "physical": "bind",
+                  "bindIndex": 0,
+                  "bindOrder": "depth-first",
+                  "cardinalities": [
+                    {
+                      "type": "exact",
+                      "value": 244
+                    },
+                    {
+                      "type": "exact",
+                      "value": 278
+                    }
+                  ],
+                  "joinCoefficients": {
+                    "iterations": 0.015609156574545053,
+                    "persistedItems": 0,
+                    "blockingItems": 0,
+                    "requestTime": 0
+                  },
+                  "children": [
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    },
+                    {
+                      "logical": "service"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

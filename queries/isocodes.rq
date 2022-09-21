@@ -1,0 +1,17 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+
+SELECT DISTINCT ?isoCode ?year ?life_exp WHERE {
+  SERVICE <https://labs.tib.eu/sdm/worldbank_endpoint/sparql> {
+    <http://worldbank.org/Country/DEU> a <http://worldbank.org/Country> .
+    <http://worldbank.org/Country/DEU> <http://www.w3.org/2002/07/owl#sameAs> ?sameAsCountry .
+    <http://worldbank.org/Country/DEU> <http://worldbank.org/hasAnnualIndicatorEntry> ?annualIndicator .
+    ?annualIndicator <http://worldbank.org/hasIndicator> <http://worldbank.org/Indicator/SP.DYN.LE00.IN> .
+    ?annualIndicator <http://www.w3.org/2002/07/owl#hasValue> ?life_exp .
+    ?annualIndicator <http://www.w3.org/2006/time#year> ?year .
+  }
+  SERVICE <https://query.wikidata.org/sparql> {
+    ?sameAsCountry p:P298 ?itemIsoCode .
+    ?itemIsoCode ps:P298 ?isoCode .
+  }
+} ORDER BY ?year
